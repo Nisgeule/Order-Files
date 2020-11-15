@@ -1,1 +1,14 @@
+import shutil
+import os
+import pathlib
+from pathlib import *
+import glob
 
+
+new_r = Path("C:/Users/PC FAMILLE/Desktop/Yanis/Programmation/Lycee")
+repertory = str(input("Entrez votre lien de répertoire"))
+old_r = Path(repertory)
+
+for odt_b in list(old_r.glob("**/*.odt")): #permet d'afficher la liste des fichiers selon une extension donnée
+    shutil.copy(odt_b, new_r)
+    print("Le fichier ", odt_b, "a bien été transféré")
